@@ -1,13 +1,16 @@
-#' Title
+#' Get Joined Meetups
 #'
-#' @param key
-#' @param fields
-#' @param ...
+#' @description This request is specific to an API key. Provides urlname used
+#' in other functions.
 #'
-#' @return
+#' @param key an API key from https://www.meetup.com/meetup_api/
+#' @param fields a charcter vector of the fields to return
+#' @param ... a named list where each element is a character vector for additional
+#' parameters e.g. `list("omit" = c("member.photo", "member.event_context")`
+#'
+#' @return returns a data.frame of the meetups associated to an API key
 #' @export
 #'
-#' @examples
 get_joined_meetups <- function(key,
                                fields = c("id", "name", "urlname", "link"),
                                ...) {
@@ -17,17 +20,17 @@ get_joined_meetups <- function(key,
 
 }
 
-#' Title
+#' Get Meetup Members
 #'
-#' @param urlname
-#' @param key
-#' @param fields
-#' @param ...
+#' @param urlname string, URL name for the meetup. e.g 'R-Users-Sydney'
+#' @param key an API key from https://www.meetup.com/meetup_api/
+#' @param fields a charcter vector of the fields to return
+#' @param ... a named list where each element is a character vector for additional
+#' parameters e.g. `list("omit" = c("member.photo", "member.event_context")`
 #'
-#' @return
+#' @return a data.frame of members in a meetup.
 #' @export
 #'
-#' @examples
 get_meetup_members <- function(urlname,
                                key,
                                fields = c("id", "name"),
@@ -39,17 +42,22 @@ get_meetup_members <- function(urlname,
 
 }
 
-#' Title
+#' Get Meetup Events
 #'
-#' @param urlname
-#' @param key
-#' @param fields
-#' @param ...
+#' @description This function retrieves all meetup events for a meetup.
+#' This is forced to be ordered in descending order and show both upcoming and
+#' past events, therefore 'status' and 'desc' should not be passed as named
+#' arguements to the `...` (dots) arguement.
 #'
-#' @return
+#' @param urlname string, URL name for the meetup. e.g 'R-Users-Sydney'
+#' @param key an API key from https://www.meetup.com/meetup_api/
+#' @param fields a charcter vector of the fields to return
+#' @param ... a named list where each element is a character vector for additional
+#' parameters e.g. `list("omit" = c("member.photo", "member.event_context")`
+#'
+#' @return data.frame of meetup events for a meetup.
 #' @export
 #'
-#' @examples
 get_meetup_events <- function(urlname,
                               key,
                               fields = c("status", "id", "name"),

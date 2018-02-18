@@ -2,13 +2,23 @@
 % Please edit documentation in R/meetups.R
 \name{get_meetup_members}
 \alias{get_meetup_members}
-\title{Title}
+\title{Get Meetup Members}
 \usage{
 get_meetup_members(urlname, key, fields = c("id", "name"), ...)
 }
 \arguments{
-\item{...}{}
+\item{urlname}{string, URL name for the meetup. e.g 'R-Users-Sydney'}
+
+\item{key}{an API key from https://www.meetup.com/meetup_api/}
+
+\item{fields}{a charcter vector of the fields to return}
+
+\item{...}{a named list where each element is a character vector for additional
+parameters e.g. `list("omit" = c("member.photo", "member.event_context")`}
+}
+\value{
+a data.frame of members in a meetup.
 }
 \description{
-Title
+Get Meetup Members
 }

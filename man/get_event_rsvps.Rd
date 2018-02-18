@@ -2,13 +2,25 @@
 % Please edit documentation in R/attendance.R
 \name{get_event_rsvps}
 \alias{get_event_rsvps}
-\title{Title}
+\title{Get RSVPs for a meetup event}
 \usage{
 get_event_rsvps(urlname, event_id, key, fields = c("response", "member"), ...)
 }
 \arguments{
-\item{...}{}
+\item{urlname}{string, URL name for the meetup. e.g 'R-Users-Sydney'.}
+
+\item{event_id}{string, event id for the meetup event.}
+
+\item{key}{an API key from https://www.meetup.com/meetup_api/.}
+
+\item{fields}{a charcter vector of the fields to return.}
+
+\item{...}{a named list where each element is a character vector for additional
+parameters e.g. `list("omit" = c("member.photo", "member.event_context")`.}
+}
+\value{
+data.frame of event RSVPs.
 }
 \description{
-Title
+Can be used after calling the
 }

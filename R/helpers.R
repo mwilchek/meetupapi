@@ -1,15 +1,13 @@
-# helper funtion to build the request URL
-
 #' Contruct API method requests
 #'
 #' @param method a character string of the method to use e.g. 'self/groups'
-#' refer to https://secure.meetup.com/meetup_api
-#' @param fields a character string of the fields to be returned
-#' @param key a meetup API key
+#' refer to https://secure.meetup.com/meetup_api.
+#' @param fields a character string of the fields to be returned.
+#' @param key a meetup API key.
 #' @param ... additional parameters to specify for the request, must be a named
-#' list where the names refer to the parameter and the arguements are characters
+#' list where the names refer to the parameter and the arguements are characters.
 #'
-#' @return URL request string
+#' @return URL request string.
 #'
 #' @examples
 #' .construct_req(method = "self/groups",
@@ -43,17 +41,15 @@
 
 }
 
-# clean response
-#' Title
+#' Clean request results
 #'
-#' @param content
+#' @param content A successful request object to be parsed.
 #'
-#' @return
+#' @return returns a data.frame object of for the request. Nested fields will be
+#' made into a column where the parent name is a prefix.
 #' @import dplyr
 #' @import purrr
 #'
-#'
-#' @examples
 .clean_content <- function(content) {
 
   content <- content %>%
@@ -63,20 +59,21 @@
 
 }
 
-# generalised GET structure
-#' Title
+#' Wrapper for processing and cleaning an API GET request
 #'
-#' @param method
-#' @param fields
-#' @param key
-#' @param dots
-#' @param only_first
+#' @param method the API method string which determines the results of GET request.
+#' @param fields a character string of the fields that are to be retrieved. Default
+#' is to retrieve all fields.
+#' @param key the API key.
+#' @param dots a named list of the additional parameters to be specified for the
+#' method.
+#' @param only_first Boolean, default is FALSE which retrieves all records. True
+#' will only get the first request.
 #'
-#' @return
+#' @return a data.frame of the results.
 #' @import httr
 #' @importFrom magrittr "%>%"
 #'
-#' @examples
 .meetup_api_GET <- function(method, fields, key, dots, only_first = F) {
 
   req_url <- .construct_req(method, rev(fields), key, dots)

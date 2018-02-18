@@ -2,14 +2,26 @@
 % Please edit documentation in R/attendance.R
 \name{get_event_attendance}
 \alias{get_event_attendance}
-\title{Title}
+\title{Get attendance for a past event}
 \usage{
 get_event_attendance(urlname, event_id, key, fields = c("status", "member",
   "rsvp.response"), ...)
 }
 \arguments{
-\item{...}{}
+\item{urlname}{string, URL name for the meetup. e.g 'R-Users-Sydney'.}
+
+\item{event_id}{string, event id for the meetup event.}
+
+\item{key}{an API key from https://www.meetup.com/meetup_api/.}
+
+\item{fields}{a charcter vector of the fields to return.}
+
+\item{...}{a named list where each element is a character vector for additional
+parameters e.g. `list("omit" = c("member.photo", "member.event_context")`.}
+}
+\value{
+data.frame of attendance for a past meetup event.
 }
 \description{
-Title
+Get attendance for a past event
 }

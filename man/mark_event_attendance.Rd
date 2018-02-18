@@ -2,13 +2,25 @@
 % Please edit documentation in R/attendance.R
 \name{mark_event_attendance}
 \alias{mark_event_attendance}
-\title{Title}
+\title{Mark Event Attendance}
 \usage{
 mark_event_attendance(urlname, event_id, member_ids, member_status, key)
 }
 \arguments{
-\item{key}{}
+\item{urlname}{string, URL name for the meetup. e.g 'R-Users-Sydney'}
+
+\item{event_id}{string, event id for the meetup event.}
+
+\item{member_ids}{vector of member id strings to mark attendance for.}
+
+\item{member_status}{vector string for member status, positions match those in
+member_id's.}
+
+\item{key}{an API key from https://www.meetup.com/meetup_api/.}
+}
+\value{
+the POST request object.
 }
 \description{
-Title
+Mark Event Attendance
 }

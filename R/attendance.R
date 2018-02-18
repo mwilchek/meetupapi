@@ -1,15 +1,17 @@
-#' Title
+#' Get RSVPs for a meetup event
 #'
-#' @param urlname
-#' @param event_id
-#' @param key
-#' @param fields
-#' @param ...
+#' @description Can be used after calling the
 #'
-#' @return
+#' @param urlname string, URL name for the meetup. e.g 'R-Users-Sydney'.
+#' @param event_id string, event id for the meetup event.
+#' @param key an API key from https://www.meetup.com/meetup_api/.
+#' @param fields a charcter vector of the fields to return.
+#' @param ... a named list where each element is a character vector for additional
+#' parameters e.g. `list("omit" = c("member.photo", "member.event_context")`.
+#'
+#' @return data.frame of event RSVPs.
 #' @export
 #'
-#' @examples
 get_event_rsvps <- function(urlname,
                             event_id,
                             key,
@@ -26,18 +28,18 @@ get_event_rsvps <- function(urlname,
 
 }
 
-#' Title
+#' Get attendance for a past event
 #'
-#' @param urlname
-#' @param event_id
-#' @param key
-#' @param fields
-#' @param ...
+#' @param urlname string, URL name for the meetup. e.g 'R-Users-Sydney'.
+#' @param event_id string, event id for the meetup event.
+#' @param key an API key from https://www.meetup.com/meetup_api/.
+#' @param fields a charcter vector of the fields to return.
+#' @param ... a named list where each element is a character vector for additional
+#' parameters e.g. `list("omit" = c("member.photo", "member.event_context")`.
 #'
-#' @return
+#' @return data.frame of attendance for a past meetup event.
 #' @export
 #'
-#' @examples
 get_event_attendance <- function(urlname,
                                  event_id,
                                  key,
@@ -55,18 +57,18 @@ get_event_attendance <- function(urlname,
 }
 
 
-#' Title
+#' Mark Event Attendance
 #'
-#' @param urlname
-#' @param event_id
-#' @param member_ids
-#' @param member_status
-#' @param key
+#' @param urlname string, URL name for the meetup. e.g 'R-Users-Sydney'
+#' @param event_id string, event id for the meetup event.
+#' @param member_ids vector of member id strings to mark attendance for.
+#' @param member_status vector string for member status, positions match those in
+#' member_id's.
+#' @param key an API key from https://www.meetup.com/meetup_api/.
 #'
-#' @return
+#' @return the POST request object.
 #' @export
 #'
-#' @examples
 mark_event_attendance <- function(urlname,
                                   event_id,
                                   member_ids,
