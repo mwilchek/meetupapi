@@ -25,3 +25,9 @@ data.frame of attendance for a past meetup event.
 \description{
 Get attendance for a past event
 }
+\examples{
+\dontrun{
+get_event_attendance("R-Users-Sydney", "your_event_id", "your_api_key")
+}
+
+}

@@ -11,6 +11,11 @@
 #' @return returns a data.frame of the meetups associated to an API key
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' get_joined_meetups("your_api_key")
+#' }
+#'
 get_joined_meetups <- function(key,
                                fields = c("id", "name", "urlname", "link"),
                                ...) {
@@ -31,6 +36,10 @@ get_joined_meetups <- function(key,
 #' @return a data.frame of members in a meetup.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' get_meetup_members("R-Users-Sydney", "your_api_key")
+#' }
 get_meetup_members <- function(urlname,
                                key,
                                fields = c("id", "name"),
@@ -57,6 +66,11 @@ get_meetup_members <- function(urlname,
 #'
 #' @return data.frame of meetup events for a meetup.
 #' @export
+#'
+#' @examples
+#'\dontrun{
+#' get_meetup_events("R-Users-Sydney", "your_api_key")
+#'}
 #'
 get_meetup_events <- function(urlname,
                               key,

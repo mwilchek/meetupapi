@@ -2,8 +2,7 @@ Package: meetupapi
 Type: Package
 Title: Access Meetup API in R
 Version: 0.1.0
-Author: person("Zac", "Davies", email = "zaclavis@gmail.com", 
-  role = c("aut", "cre")
+Author: Zac Davies <zaclavis@gmail.com>
 Maintainer: Zac Davies <zaclavis@gmail.com>
 Description: Provides functions that allow management of a meetup group within R.
 License: GPL-3

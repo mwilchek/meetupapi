@@ -25,3 +25,9 @@ This is forced to be ordered in descending order and show both upcoming and
 past events, therefore 'status' and 'desc' should not be passed as named
 arguements to the `...` (dots) arguement.
 }
+\examples{
+\dontrun{
+get_meetup_events("R-Users-Sydney", "your_api_key")
+}
+
+}

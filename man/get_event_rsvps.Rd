@@ -22,5 +22,12 @@ parameters e.g. `list("omit" = c("member.photo", "member.event_context")`.}
 data.frame of event RSVPs.
 }
 \description{
-Can be used after calling the
+Can be used after calling the `get_joined_meetups()` function
+and getting a urlname, and calling `get_meetup_events()` for an event_id
+}
+\examples{
+\dontrun{
+get_event_rsvps("R-Users-Sydney", "your_event_id", "your_api_key")
+}
+
 }

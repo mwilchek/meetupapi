@@ -21,3 +21,9 @@ returns a data.frame of the meetups associated to an API key
 This request is specific to an API key. Provides urlname used
 in other functions.
 }
+\examples{
+\dontrun{
+get_joined_meetups("your_api_key")
+}
+
+}

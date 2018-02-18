@@ -1,6 +1,7 @@
 #' Get RSVPs for a meetup event
 #'
-#' @description Can be used after calling the
+#' @description Can be used after calling the `get_joined_meetups()` function
+#' and getting a urlname, and calling `get_meetup_events()` for an event_id
 #'
 #' @param urlname string, URL name for the meetup. e.g 'R-Users-Sydney'.
 #' @param event_id string, event id for the meetup event.
@@ -11,6 +12,11 @@
 #'
 #' @return data.frame of event RSVPs.
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_event_rsvps("R-Users-Sydney", "your_event_id", "your_api_key")
+#' }
 #'
 get_event_rsvps <- function(urlname,
                             event_id,
@@ -40,6 +46,11 @@ get_event_rsvps <- function(urlname,
 #' @return data.frame of attendance for a past meetup event.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' get_event_attendance("R-Users-Sydney", "your_event_id", "your_api_key")
+#' }
+#'
 get_event_attendance <- function(urlname,
                                  event_id,
                                  key,
@@ -56,7 +67,6 @@ get_event_attendance <- function(urlname,
 
 }
 
-
 #' Mark Event Attendance
 #'
 #' @param urlname string, URL name for the meetup. e.g 'R-Users-Sydney'
@@ -68,6 +78,13 @@ get_event_attendance <- function(urlname,
 #'
 #' @return the POST request object.
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' mark_event_attendance("R-Users-Sydney", "your_event_id",
+#'                       "my_member_id", "attended",
+#'                       "your_api_key")
+#' }
 #'
 mark_event_attendance <- function(urlname,
                                   event_id,

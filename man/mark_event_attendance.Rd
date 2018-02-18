@@ -24,3 +24,11 @@ the POST request object.
 \description{
 Mark Event Attendance
 }
+\examples{
+\dontrun{
+mark_event_attendance("R-Users-Sydney", "your_event_id",
+                      "my_member_id", "attended",
+                      "your_api_key")
+}
+
+}

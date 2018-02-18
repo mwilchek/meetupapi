@@ -22,3 +22,8 @@ a data.frame of members in a meetup.
 \description{
 Get Meetup Members
 }
+\examples{
+\dontrun{
+get_meetup_members("R-Users-Sydney", "your_api_key")
+}
+}
