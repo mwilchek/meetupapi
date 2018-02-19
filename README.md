@@ -11,3 +11,12 @@ Upcoming features:
 * Handling date columns automatically
 * Shiny interface for marking off attendance
 * Additional API method functions
+
+
+# Current functions
+* `get_joined_meetups()`
+* `get_meetup_events()`
+* `get_meetup_members()`
+* `get_event_rsvps()`
+* `get_event_attendance()`
+* `mark_event_attendance()`
