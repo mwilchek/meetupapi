@@ -13,7 +13,7 @@ Upcoming features:
 * Additional API method functions
 
 
-# Current functions
+## Current functions
 * `get_joined_meetups()`
 * `get_meetup_events()`
 * `get_meetup_members()`
