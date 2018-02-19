@@ -4,7 +4,9 @@ Title: Access 'Meetup' API
 Version: 0.1.0
 Author: Zac Davies <zaclavis@gmail.com>
 Maintainer: Zac Davies <zaclavis@gmail.com>
-Description: Provides functions that allow management of a 'Meetup' group within R.
+Description: Allows management of 'Meetup' groups via the <https:www.meetup.com/meetup_api/>.
+    Provided are a set of functions that enable fetching information of joined meetups, attendance,
+    and members. This package requires the use of an API key.
 License: GPL-3
 URL: https://github.com/zacdav/meetupapi
 BugReports: https://github.com/zacdav/meetupapi/issues
