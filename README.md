@@ -1,4 +1,4 @@
-# meetupapi
+# meetupapi  ![](http://www.r-pkg.org/badges/version/meetupapi) ![](http://cranlogs.r-pkg.org/badges/grand-total/meetupapi) 
 ## Using the Meetup API within R
 
 This package allows flexible control of the meetup API from R.
