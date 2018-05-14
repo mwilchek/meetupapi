@@ -53,9 +53,11 @@
 .clean_content <- function(content) {
 
   content <- content %>%
-    purrr::map(~ data.frame(.x, stringsAsFactors = F)) %>%
+    purrr::flatten() %>%
+    purrr::map(~data.frame(.x, stringsAsFactors = F)) %>%
     dplyr::bind_rows()
   names(content) <- gsub("\\.", "_", names(content))
+  content
 
 }
 
@@ -103,6 +105,6 @@
     }
   }
 
-  purrr::map(data, .clean_content) %>% dplyr::bind_rows()
+  .clean_content(data)
 
 }
