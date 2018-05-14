@@ -92,15 +92,13 @@
   if(!only_first) {
     if(!any(check)) {
       total <- as.numeric(resp$headers$`x-total-count`)
-      remaining <- ceiling((total - length(data[[1]]))/200)
-      if (remaining > 0) {
-        for (i in seq(remaining)) {
-          dots[["offset"]] <- i + 1
-          req_url <- .construct_req(method, rev(fields), key, dots)
-          resp <- httr::GET(req_url)
-          httr::stop_for_status(resp)
-          data[[i + 1]] <- httr::content(resp)
-        }
+      remaining <- total - length(data[[1]])
+      while (remaining > 0L) {
+        req_url <- resp$all_headers[[1]]$headers$link
+        resp <- httr::GET(gsub("^.*?\\/\\/(.*)>; rel=\"next\"", "\\1", req_url))
+        httr::stop_for_status(resp)
+        data[[length(data) + 1L]] <- httr::content(resp)
+        remaining <- remaining - length(data[[length(data)]])
       }
     }
   }
